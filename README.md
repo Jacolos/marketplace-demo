@@ -1,61 +1,285 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Marketplace Order Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📋 O projekcie
 
-## About Laravel
+**Marketplace Order Management System** to aplikacja B2B do zarządzania zamówieniami w modelu SaaS, stworzona z myślą o firmach hurtowych. System umożliwia automatyczne przyjmowanie i przetwarzanie zamówień online, zarządzanie klientami, produktami oraz pełną integrację poprzez API REST.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🎯 Kluczowe funkcjonalności
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 📦 **Zarządzanie zamówieniami** - Pełny cykl życia zamówienia od złożenia do realizacji
+- 🛍️ **Katalog produktów** - Zarządzanie stanami magazynowymi i cenami
+- 👥 **System klientów B2B** - Limity kredytowe, rabaty, historia transakcji
+- 📊 **Dashboard analityczny** - Statystyki sprzedaży w czasie rzeczywistym
+- 🔌 **API REST** - Pełna integracja z systemami zewnętrznymi
+- ⚡ **Komponenty Livewire** - Reaktywny interfejs bez przeładowania strony
+- 📱 **Responsive Design** - Działa na wszystkich urządzeniach
+- 🔐 **Autentykacja API** - Bezpieczny dostęp przez klucze API
+- 📄 **Generowanie faktur** - Automatyczne faktury VAT
+- 🌐 **Webhooks** - Powiadomienia o zdarzeniach w systemie
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Stack technologiczny
 
-## Learning Laravel
+### Backend
+- **Laravel 10** - Framework PHP
+- **MySQL 8.0** - Baza danych
+- **Redis** - Cache i kolejki
+- **PHP 8.3** - Język programowania
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Frontend
+- **Livewire 3.0** - Reaktywne komponenty
+- **Tailwind CSS 3.0** - Framework CSS
+- **Alpine.js** - Lekki framework JS
+- **Chart.js** - Wykresy i statystyki
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Tests
+- **PHPUnit** - Testy
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## 🚀 Szybki start
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Wymagania
+- PHP >= 8.3
+- Composer >= 2.0
+- Node.js >= 18.0
+- MySQL >= 8.0
+- Redis (opcjonalnie)
 
-### Premium Partners
+### Instalacja krok po kroku
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+# 1. Klonowanie repozytorium
+git clone https://github.com/Jacolos/marketplace-demo.git
+cd marketplace-demo
 
-## Contributing
+# 2. Instalacja zależności PHP
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 3. Instalacja zależności JavaScript
+npm install
 
-## Code of Conduct
+# 4. Konfiguracja środowiska
+cp .env.example .env
+php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 5. Konfiguracja bazy danych
+# Edytuj plik .env i ustaw dane dostępowe do MySQL
 
-## Security Vulnerabilities
+# 6. Utworzenie bazy danych
+mysql -u root -p
+CREATE DATABASE marketplace_orders;
+exit
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 7. Migracje i seedery
+php artisan migrate --seed
 
-## License
+# 8. Link do storage
+php artisan storage:link
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 9. Kompilacja assetów
+npm run build
+
+# 10. Uruchomienie serwera
+php artisan serve
+```
+
+Aplikacja dostępna pod adresem: http://localhost:8000
+
+
+## 🔌 API REST
+
+### Autentykacja
+Wszystkie zapytania API wymagają nagłówka:
+```http
+X-API-Key: your_api_key_here
+```
+
+### Główne endpointy
+
+#### Zamówienia
+```http
+GET    /api/orders           # Lista zamówień
+POST   /api/orders           # Utworzenie zamówienia
+GET    /api/orders/{number}  # Szczegóły zamówienia
+PUT    /api/orders/{number}  # Aktualizacja zamówienia
+DELETE /api/orders/{number}  # Anulowanie zamówienia
+```
+
+#### Produkty
+```http
+GET    /api/products         # Lista produktów
+GET    /api/products/{id}    # Szczegóły produktu
+POST   /api/products         # Dodanie produktu
+PUT    /api/products/{id}    # Aktualizacja produktu
+```
+
+### Przykład zapytania
+
+```javascript
+// Utworzenie zamówienia
+const response = await fetch('http://localhost:8000/api/orders', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'your_api_key_here'
+  },
+  body: JSON.stringify({
+    items: [
+      { product_id: 1, quantity: 5 },
+      { product_id: 3, quantity: 2 }
+    ],
+    shipping_address: {
+      street: 'ul. Przykładowa 123',
+      city: 'Warszawa',
+      postal_code: '00-001'
+    },
+    payment_method: 'transfer'
+  })
+});
+
+const order = await response.json();
+```
+
+### Rate Limiting
+- 100 zapytań na minutę per klucz API
+- Nagłówki zwrotne informują o limitach
+
+## ⚡ Komponenty Livewire
+
+### ProductSearch
+Dynamiczne wyszukiwanie produktów z filtrowaniem:
+```blade
+<livewire:product-search 
+    :categories="$categories" 
+    :min-stock="10" 
+/>
+```
+
+### OrderManager
+Kreator zamówień z walidacją w czasie rzeczywistym:
+```blade
+<livewire:order-manager 
+    :customer="$customer" 
+    :products="$products" 
+/>
+```
+
+### DashboardStats
+Statystyki odświeżające się automatycznie:
+```blade
+<livewire:dashboard-stats 
+    :period="30" 
+    :refresh="60" 
+/>
+```
+
+## 🧪 Testowanie
+
+### Uruchomienie testów
+```bash
+# Wszystkie testy
+php artisan test
+
+# Testy z pokryciem kodu
+php artisan test --coverage
+
+# Tylko testy jednostkowe
+php artisan test --testsuite=Unit
+
+# Tylko testy funkcjonalne
+php artisan test --testsuite=Feature
+
+# Konkretny test
+php artisan test tests/Feature/OrderApiTest.php
+```
+
+### Przykład testu
+
+```php
+public function test_can_create_order_via_api()
+{
+    $customer = Customer::factory()->create();
+    $product = Product::factory()->create(['stock' => 100]);
+
+    $response = $this->withHeaders([
+        'X-API-Key' => $customer->api_key,
+    ])->postJson('/api/orders', [
+        'items' => [
+            ['product_id' => $product->id, 'quantity' => 5]
+        ]
+    ]);
+
+    $response->assertStatus(201)
+             ->assertJsonStructure(['order_number', 'total_amount']);
+}
+```
+
+## 📊 Funkcjonalności szczegółowe
+
+### 🛒 System zamówień
+- Wieloetapowy proces składania zamówienia
+- Automatyczna walidacja stanów magazynowych
+- Rabaty dla klientów VIP
+- Limity kredytowe
+- Historia zmian statusów
+- Generowanie faktur PDF
+
+### 📦 Zarządzanie produktami
+- Kategorie i podkategorie
+- Śledzenie stanów magazynowych
+- Ceny hurtowe i detaliczne
+- Export CSV
+- Galeria zdjęć
+- Warianty produktów
+
+### 👥 System klientów B2B
+- Profile firm
+- Limity kredytowe
+- Indywidualne rabaty
+- Historia zamówień
+- Analiza zakupów
+- Generowanie kluczy API
+- Segmentacja klientów
+
+### 📈 Dashboard analityczny
+- Wykresy sprzedaży
+- Top produkty
+- Najlepsi klienci
+- Trendy sprzedażowe
+- Alerty magazynowe
+- KPI w czasie rzeczywistym
+
+
+## 🚀 Deployment
+
+### Produkcja
+
+```bash
+# Optymalizacja dla produkcji
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+php artisan optimize
+
+# Kompilacja assetów
+npm run build
+
+# Uruchomienie kolejek
+php artisan queue:work --daemon
+```
+
+
+
+## 📄 Licencja
+
+Projekt stworzony jako demonstracja umiejętności
+
+## 👨‍💻 Autor
+
+**Jacek Wiśniewski**
+- 📧 Email: jacolos@jacolos.pl
+
+## 🙏 Podziękowania
+
+- Laravel Team za świetny framework
+- Livewire za reaktywność bez JavaScript
+- Tailwind CSS za piękny design
